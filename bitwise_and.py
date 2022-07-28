@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import math
 import os
 import random
@@ -15,19 +17,15 @@ import sys
 
 def bitwiseAnd(N, K):
     # Write your code here
-    l = [i for i in range(1, N+1)]
-    
-    f_rate = 0
     r = 0
-    length = len(l)
-    for i in range(length):
-        for j in range(i + 1, length):
-            bit_wise = l[i] & l[j]
-            if bit_wise < K:
+    for i in range(1, N+1):
+        for j in range(i + 1, N+1):
+            bit_wise = i & j
+            if r < bit_wise < K:
                 r = bit_wise
-                if r > f_rate:
-                    f_rate = r
-    return f_rate
+                if r == K-1:
+                    return r
+    return r
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
