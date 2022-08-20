@@ -22,7 +22,7 @@ def utopianTree(n):
     for i in range(1,n+1):
         if c == 2:
             h *= 2
-            c = 0
+            c = 1
         else:
             c += 1
             h += 1
